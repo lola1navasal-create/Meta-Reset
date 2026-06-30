@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meta Reset · Centro de Recuperación de Alto Rendimiento</title>
+  <meta name="description" content="Frío, calor y compresión en un solo lugar. 44 minutos para volver a cero y rendir de nuevo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,800&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Archivo', sans-serif;
+      background: #F7F4EE;
+      color: #16365C;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+    ::selection { background: #E8651E; color: #fff; }
+
+    @keyframes mr-marquee { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+
+    /* ── BANNER ── */
+    .banner {
+      background: #E8651E;
+      color: #16365C;
+      text-align: center;
+      padding: 12px 20px;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: .01em;
+    }
+    .banner a { text-decoration: underline; font-weight: 800; }
+    .banner a:hover { opacity: .8; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 40px;
+      background: rgba(247,244,238,.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(22,54,92,.1);
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .nav-logo img { height: 52px; width: 52px; object-fit: contain; }
+    .nav-logo span { font-weight: 900; font-style: italic; font-size: 22px; letter-spacing: -.02em; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 38px;
+      font-weight: 600;
+      font-size: 16px;
+    }
+    .nav-links a { color: #16365C; transition: color .2s; }
+    .nav-links a:hover { color: #E8651E; }
+    .nav-cta {
+      background: #16365C;
+      color: #F7F4EE !important;
+      padding: 12px 26px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: background .2s, color .2s !important;
+    }
+    .nav-cta:hover { background: #E8651E !important; color: #16365C !important; }
+
+    /* ── HERO ── */
+    header#top {
+      position: relative;
+      min-height: 88vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(8,20,40,.35) 0%, rgba(8,20,40,.1) 35%, rgba(8,20,40,.88) 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 40px 90px;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-weight: 800;
+      font-size: 15px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: #E8651E;
+      margin-bottom: 22px;
+    }
+    .hero-h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(64px, 9vw, 150px);
+      line-height: .86;
+      color: #F7F4EE;
+      font-weight: 400;
+      letter-spacing: .01em;
+    }
+    .hero-h1 span { color: #E8651E; }
+    .hero-sub {
+      font-size: clamp(18px, 2vw, 24px);
+      color: #dfe6f0;
+      font-weight: 500;
+      max-width: 620px;
+      margin-top: 24px;
+      line-height: 1.45;
+    }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 36px; }
+    .btn-primary {
+      background: #E8651E;
+      color: #16365C;
+      padding: 18px 40px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 19px;
+      transition: background .2s;
+    }
+    .btn-primary:hover { background: #F7F4EE; }
+    .btn-ghost {
+      background: rgba(247,244,238,.12);
+      border: 2px solid rgba(247,244,238,.5);
+      color: #F7F4EE;
+      padding: 16px 36px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 19px;
+      transition: background .2s;
+    }
+    .btn-ghost:hover { background: rgba(247,244,238,.22); }
+
+    /* ── MARQUEE ── */
+    .marquee-wrap {
+      background: #16365C;
+      overflow: hidden;
+      padding: 18px 0;
+    }
+    .marquee-track {
+      display: flex;
+      white-space: nowrap;
+      animation: mr-marquee 24s linear infinite;
+      width: max-content;
+    }
+    .marquee-track span {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 34px;
+      letter-spacing: .1em;
+      color: #F7F4EE;
+    }
+    .marquee-dot { color: #E8651E; }
+
+    /* ── INTRO + STATS ── */
+    .intro { max-width: 1200px; margin: 0 auto; padding: 110px 40px 80px; }
+    .intro-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 60px;
+      align-items: center;
+    }
+    .section-eyebrow {
+      font-weight: 800;
+      font-size: 15px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: #E8651E;
+      margin-bottom: 18px;
+    }
+    .section-h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(44px, 6vw, 86px);
+      line-height: .9;
+      color: #16365C;
+    }
+    .section-h2 span { color: #E8651E; }
+    .intro p {
+      font-size: 19px;
+      line-height: 1.6;
+      color: #41506a;
+      margin-top: 24px;
+      max-width: 520px;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .stat {
+      border-radius: 20px;
+      padding: 34px 28px;
+    }
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 80px;
+      line-height: .8;
+    }
+    .stat-label { font-weight: 600; font-size: 17px; margin-top: 8px; }
+    .stat-dark { background: #16365C; color: #F7F4EE; }
+    .stat-dark .stat-num { color: #E8651E; }
+    .stat-dark .stat-label { color: #9fb2cc; }
+    .stat-light { background: #F7F4EE; border: 2px solid rgba(22,54,92,.12); }
+    .stat-light .stat-num { color: #16365C; }
+    .stat-light .stat-label { color: #8d8470; }
+    .stat-orange { background: #E8651E; color: #16365C; }
+
+    /* ── 3 VÍAS ── */
+    #vias { background: #16365C; padding: 100px 40px; }
+    #vias .inner { max-width: 1200px; margin: 0 auto; }
+    #vias .header { text-align: center; margin-bottom: 60px; }
+    #vias .header .section-eyebrow { margin-bottom: 16px; }
+    #vias h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(48px, 7vw, 96px);
+      line-height: .88;
+      color: #F7F4EE;
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 24px;
+    }
+    .service-card {
+      background: #0c1a2c;
+      border-radius: 24px;
+      overflow: hidden;
+      transition: transform .3s;
+    }
+    .service-card:hover { transform: translateY(-6px); }
+    .card-img-wrap { height: 300px; position: relative; overflow: hidden; }
+    .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }
+    .card-badge {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      background: #E8651E;
+      color: #16365C;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: .1em;
+      padding: 7px 16px;
+      border-radius: 999px;
+      text-transform: uppercase;
+    }
+    .card-body { padding: 30px 28px 34px; }
+    .card-body h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 52px;
+      color: #F7F4EE;
+      line-height: .9;
+    }
+    .card-body p { font-size: 16px; line-height: 1.55; color: #9fb2cc; margin-top: 12px; }
+
+    /* ── MÉTODO ── */
+    #metodo { max-width: 1200px; margin: 0 auto; padding: 110px 40px; }
+    #metodo .header { text-align: center; margin-bottom: 64px; }
+    #metodo h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(48px, 7vw, 96px);
+      line-height: .88;
+      color: #16365C;
+    }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+    .step { padding: 34px 28px; border-top: 3px solid #16365C; }
+    .step-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 64px;
+      color: #E8651E;
+      line-height: .9;
+    }
+    .step-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 40px;
+      color: #16365C;
+      margin-top: 10px;
+    }
+    .step p { font-size: 16px; line-height: 1.5; color: #5a6678; margin-top: 8px; }
+
+    /* ── PRECIOS ── */
+    #precios { background: #ECE6DC; padding: 100px 40px; }
+    #precios .inner { max-width: 1100px; margin: 0 auto; }
+    #precios .header { text-align: center; margin-bottom: 56px; }
+    #precios h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(48px, 7vw, 90px);
+      line-height: .88;
+      color: #16365C;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      align-items: stretch;
+    }
+    .pricing-card {
+      border-radius: 24px;
+      padding: 40px 34px;
+      display: flex;
+      flex-direction: column;
+    }
+    .pricing-card.light {
+      background: #F7F4EE;
+      border: 2px solid rgba(22,54,92,.1);
+    }
+    .pricing-card.featured {
+      background: #16365C;
+      position: relative;
+      transform: scale(1.03);
+      box-shadow: 0 30px 60px rgba(22,54,92,.25);
+    }
+    .pricing-card.featured .badge-top {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #E8651E;
+      color: #16365C;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: .1em;
+      padding: 8px 22px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .plan-label {
+      font-weight: 800;
+      font-size: 15px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .plan-label.muted { color: #8d8470; }
+    .plan-label.accent { color: #E8651E; }
+    .plan-price {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 88px;
+      line-height: .85;
+      margin-top: 14px;
+    }
+    .plan-price.dark { color: #16365C; }
+    .plan-price.light-text { color: #F7F4EE; }
+    .plan-sub { font-weight: 600; font-size: 16px; margin-top: 4px; }
+    .plan-sub.muted { color: #8d8470; }
+    .plan-sub.soft { color: #9fb2cc; }
+    .plan-features {
+      list-style: none;
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .plan-features.dark-list { color: #41506a; }
+    .plan-features.light-list { color: #dfe6f0; }
+    .plan-features .check { color: #E8651E; }
+    .plan-btn {
+      display: block;
+      text-align: center;
+      padding: 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      margin-top: auto;
+      margin-top: 30px;
+      transition: background .2s, color .2s;
+    }
+    .plan-btn.dark-btn { background: #16365C; color: #F7F4EE; }
+    .plan-btn.dark-btn:hover { background: #E8651E; color: #16365C; }
+    .plan-btn.orange-btn { background: #E8651E; color: #16365C; font-weight: 800; }
+    .plan-btn.orange-btn:hover { background: #F7F4EE; }
+    .pricing-note {
+      text-align: center;
+      font-weight: 600;
+      font-size: 15px;
+      color: #8d8470;
+      margin-top: 30px;
+    }
+
+    /* ── GALERÍA ── */
+    .gallery { max-width: 1280px; margin: 0 auto; padding: 100px 40px; }
+    .gallery .header { text-align: center; margin-bottom: 48px; }
+    .gallery h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(44px, 6vw, 84px);
+      line-height: .88;
+      color: #16365C;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+    .gallery-grid img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
+    /* ── FOUNDER ── */
+    .founder { background: #16365C; padding: 90px 40px; }
+    .founder-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 50px;
+      align-items: center;
+    }
+    .founder-img {
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: 24px;
+      justify-self: center;
+    }
+    .founder-quote {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(40px, 5vw, 72px);
+      line-height: .92;
+      color: #F7F4EE;
+    }
+    .founder-quote span { color: #E8651E; }
+    .founder-text {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #9fb2cc;
+      margin-top: 24px;
+      max-width: 480px;
+    }
+    .founder-name { font-weight: 700; font-size: 17px; color: #F7F4EE; margin-top: 22px; }
+
+    /* ── CTA ── */
+    #reservar { background: #E8651E; padding: 110px 40px; text-align: center; }
+    .cta-inner { max-width: 820px; margin: 0 auto; }
+    #reservar h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(56px, 9vw, 130px);
+      line-height: .84;
+      color: #16365C;
+    }
+    .cta-sub { font-size: 20px; font-weight: 600; color: #7a3411; margin-top: 20px; line-height: 1.5; }
+    .cta-btns { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-top: 40px; }
+    .btn-dark-big {
+      background: #16365C;
+      color: #F7F4EE;
+      padding: 20px 46px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 20px;
+      transition: background .2s;
+    }
+    .btn-dark-big:hover { background: #0c1a2c; }
+
+    /* ── FOOTER ── */
+    footer { background: #0c1a2c; color: #9fb2cc; padding: 50px 40px; }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-logo { display: flex; align-items: center; gap: 12px; }
+    .footer-logo img {
+      height: 46px;
+      width: 46px;
+      object-fit: contain;
+      background: #fff;
+      border-radius: 50%;
+      padding: 4px;
+    }
+    .footer-logo span { font-weight: 900; font-style: italic; font-size: 20px; color: #F7F4EE; }
+    .footer-logo span em { color: #E8651E; font-style: normal; }
+    .footer-links { display: flex; gap: 28px; font-weight: 600; font-size: 15px; }
+    .footer-links a { color: #9fb2cc; transition: color .2s; }
+    .footer-links a:hover { color: #E8651E; }
+    .footer-copy { font-size: 14px; color: #5a6f8f; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 14px 20px; }
+      .nav-links { gap: 16px; font-size: 14px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .hero-content { padding: 0 20px 60px; }
+      .intro { padding: 70px 20px 50px; }
+      #vias, #precios, .founder, #reservar { padding: 70px 20px; }
+      #metodo { padding: 70px 20px; }
+      .gallery { padding: 70px 20px; }
+      footer { padding: 40px 20px; }
+      .pricing-card.featured { transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BANNER PRECIO -->
+  <div class="banner">
+    ⚡ Las sesiones aumentan la semana que viene — reservá al valor de hoy.&nbsp;
+    <a href="#reservar">Reservar →</a>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#top" class="nav-logo">
+      <img src="assets/logo-real.png" alt="Meta Reset">
+      <span><span style="color:#16365C;">META </span><span style="color:#16365C;">R</span><span style="color:#E8651E;">ESET</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#metodo">El método</a>
+      <a href="#vias">Servicios</a>
+      <a href="#precios">Precios</a>
+      <a href="#reservar" class="nav-cta">Reservá tu sesión</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="top">
+    <img class="hero-img" src="assets/felipe-hero.jpg" alt="Recuperación en Meta Reset">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Centro de recuperación de alto rendimiento</div>
+      <h1 class="hero-h1">Entrená duro.<br>Recuperate <span>en serio.</span></h1>
+      <p class="hero-sub">Frío, calor y compresión en un solo lugar. 44 minutos para volver a cero y rendir de nuevo.</p>
+      <div class="hero-btns">
+        <a href="#reservar" class="btn-primary">Reservá tu sesión →</a>
+        <a href="#metodo" class="btn-ghost">Conocé el método</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>RECUPERÁ&nbsp;&nbsp;<span class="marquee-dot">●</span>&nbsp;&nbsp;RESETEÁ&nbsp;&nbsp;<span class="marquee-dot">●</span>&nbsp;&nbsp;REPETÍ&nbsp;&nbsp;<span class="marquee-dot">●</span>&nbsp;&nbsp;RECUPERÁ&nbsp;&nbsp;<span class="marquee-dot">●</span>&nbsp;&nbsp;RESETEÁ&nbsp;&nbsp;<span class="marquee-dot">●</span>&nbsp;&nbsp;REPETÍ&nbsp;&nbsp;<span class="marquee-dot">●</span>&nbsp;&nbsp;</span>
+      <span>RECUPERÁ&nbsp;&nbsp;<span class="marquee-dot">●</span>&nbsp;&nbsp;RESETEÁ&nbsp;&nbsp;<span class="marquee-dot">●</span>&nbsp;&nbsp;REPETÍ&nbsp;&nbsp;<span class="marquee-dot">●</span>&nbsp;&nbsp;RECUPERÁ&nbsp;&nbsp;<span class="marquee-dot">●</span>&nbsp;&nbsp;RESETEÁ&nbsp;&nbsp;<span class="marquee-dot">●</span>&nbsp;&nbsp;REPETÍ&nbsp;&nbsp;<span class="marquee-dot">●</span>&nbsp;&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- INTRO + STATS -->
+  <section class="intro">
+    <div class="intro-grid">
+      <div>
+        <div class="section-eyebrow">¿Qué es Meta Reset?</div>
+        <h2 class="section-h2">No es un lujo.<br>Es parte del <span>entrenamiento.</span></h2>
+        <p>El músculo no crece cuando entrenás: crece cuando te recuperás. En Meta Reset combinamos las tres herramientas que usan los atletas de elite para que rindas más, te lesiones menos y te sientas nuevo cada semana.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat stat-dark"><div class="stat-num">44'</div><div class="stat-label">el protocolo completo</div></div>
+        <div class="stat stat-light"><div class="stat-num">−110°</div><div class="stat-label">crioterapia</div></div>
+        <div class="stat stat-light"><div class="stat-num">3</div><div class="stat-label">vías de recuperación</div></div>
+        <div class="stat stat-orange"><div class="stat-num">2-3</div><div class="stat-label">veces / semana ideal</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 VÍAS -->
+  <section id="vias">
+    <div class="inner">
+      <div class="header">
+        <div class="section-eyebrow">Servicios</div>
+        <h2>Tres formas de volver a cero</h2>
+      </div>
+      <div class="cards-grid">
+        <!-- Frío -->
+        <div class="service-card">
+          <div class="card-img-wrap">
+            <img src="assets/felipe-crio.jpg" alt="Crioterapia">
+            <span class="card-badge">Frío</span>
+          </div>
+          <div class="card-body">
+            <h3>Crioterapia</h3>
+            <p>Inmersión en agua helada a −110° de sensación. Corta la inflamación, frena el dolor y dispara tu energía.</p>
+          </div>
+        </div>
+        <!-- Calor -->
+        <div class="service-card">
+          <div class="card-img-wrap">
+            <img src="assets/sauna.jpg" alt="Sauna" style="object-position:center;">
+          </div>
+          <span class="card-badge" style="position:absolute;top:18px;left:18px;">Calor</span>
+          <div class="card-body">
+            <h3>Sauna infrarrojo</h3>
+            <p>Calor que repara desde adentro. Relaja la tensión profunda, oxigena el músculo y mejora tu descanso.</p>
+          </div>
+        </div>
+        <!-- Compresión -->
+        <div class="service-card">
+          <div class="card-img-wrap">
+            <img src="assets/compresion.jpg" alt="Botas de compresión" style="object-position:center;">
+            <span class="card-badge">Compresión</span>
+          </div>
+          <div class="card-body">
+            <h3>Botas de presión</h3>
+            <p>Compresión secuencial que bombea sangre, limpia las piernas y las deja livianas. Relajate mientras trabaja.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÉTODO -->
+  <section id="metodo">
+    <div class="header">
+      <div class="section-eyebrow">El método</div>
+      <h2>Tu protocolo de 44 minutos</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-name">Sauna · 15'</div>
+        <p>Abrimos el cuerpo y soltamos la tensión.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-name">Frío · 4'</div>
+        <p>El golpe de frío que corta la inflamación.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-name">Botas · 20'</div>
+        <p>Compresión que limpia y aliviana las piernas.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-name">Respiración · 5'</div>
+        <p>Bajás pulsaciones y cerrás el reset.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRECIOS -->
+  <section id="precios">
+    <div class="inner">
+      <div class="header">
+        <div class="section-eyebrow">Precios</div>
+        <h2>Elegí cómo recuperarte</h2>
+      </div>
+      <div class="pricing-grid">
+        <!-- Sesión suelta -->
+        <div class="pricing-card light">
+          <div class="plan-label muted">Sesión suelta</div>
+          <div class="plan-price dark">$30.000</div>
+          <div class="plan-sub muted">por sesión completa de 44'</div>
+          <ul class="plan-features dark-list">
+            <li>✓ Sauna + Frío + Compresión</li>
+            <li>✓ Acompañamiento del protocolo</li>
+            <li>✓ Sin compromiso</li>
+          </ul>
+          <a href="#reservar" class="plan-btn dark-btn">Reservar</a>
+        </div>
+        <!-- Membresía (destacada) -->
+        <div class="pricing-card featured">
+          <span class="badge-top">Más elegido</span>
+          <div class="plan-label accent">Membresía mensual</div>
+          <div class="plan-price light-text">Plan</div>
+          <div class="plan-sub soft">recuperate las veces que necesites</div>
+          <ul class="plan-features light-list">
+            <li><span class="check">✓</span> Sesiones ilimitadas al mes</li>
+            <li><span class="check">✓</span> El mejor precio por sesión</li>
+            <li><span class="check">✓</span> Prioridad de turnos</li>
+          </ul>
+          <a href="#reservar" class="plan-btn orange-btn">Consultar disponibilidad</a>
+        </div>
+        <!-- Fidelidad -->
+        <div class="pricing-card light">
+          <div class="plan-label muted">Tarjeta de fidelidad</div>
+          <div class="plan-price dark">Pack</div>
+          <div class="plan-sub muted">beneficios exclusivos · cupos limitados</div>
+          <ul class="plan-features dark-list">
+            <li>✓ Sesiones con descuento</li>
+            <li>✓ Beneficios para socios</li>
+            <li>✓ Edición limitada</li>
+          </ul>
+          <a href="#reservar" class="plan-btn dark-btn">Quiero la mía</a>
+        </div>
+      </div>
+      <p class="pricing-note">Los valores aumentan la semana que viene. Reservá ahora al precio actual.</p>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section class="gallery">
+    <div class="header">
+      <div class="section-eyebrow">El espacio</div>
+      <h2>Diseñado para que pares de verdad</h2>
+    </div>
+    <div class="gallery-grid">
+      <img src="assets/felipe-crio2.jpg" alt="Meta Reset espacio">
+      <img src="assets/detalle-agua.jpg" alt="Meta Reset detalle">
+      <img src="assets/felipe-profile.jpg" alt="Meta Reset perfil">
+      <img src="assets/felipe-portrait.jpg" alt="Meta Reset retrato">
+    </div>
+  </section>
+
+  <!-- FOUNDER -->
+  <section class="founder">
+    <div class="founder-inner">
+      <img class="founder-img" src="assets/felipe-portrait.jpg" alt="Felipe — Meta Reset">
+      <div>
+        <div class="founder-quote">"Entreno igual.<br><span>Me recupero distinto."</span></div>
+        <p class="founder-text">Creamos Meta Reset porque la recuperación no puede ser un después. Es parte del plan. Vení, probá el protocolo y sentí la diferencia en tu próxima semana.</p>
+        <div class="founder-name">— Felipe, fundador de Meta Reset</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / RESERVAR -->
+  <section id="reservar">
+    <div class="cta-inner">
+      <h2>Reservá tu reset</h2>
+      <p class="cta-sub">Escribinos por DM y coordinamos tu primera sesión. Tu cuerpo te lo va a agradecer.</p>
+      <div class="cta-btns">
+        <a href="https://instagram.com/meta.reset" target="_blank" rel="noopener" class="btn-dark-big">Escribinos · @meta.reset</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="assets/logo-real.png" alt="Meta Reset">
+        <span>META R<em>ESET</em></span>
+      </div>
+      <div class="footer-links">
+        <a href="#metodo">El método</a>
+        <a href="#vias">Servicios</a>
+        <a href="#precios">Precios</a>
+        <a href="https://instagram.com/meta.reset" target="_blank" rel="noopener">@meta.reset</a>
+      </div>
+      <div class="footer-copy">© Meta Reset · Recuperá. Reseteá. Repetí.</div>
+    </div>
+  </footer>
+
+</body>
+</html>
