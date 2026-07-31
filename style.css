@@ -175,11 +175,11 @@ nav {
 .gallery-item.gallery-main img { aspect-ratio: 3/5; }
 
 /* ── COMUNIDAD ── */
-.comunidad-section { padding: 80px 0; background: #16365C; }
+.comunidad-section { padding: 80px 0; background: #F7F4EE; }
 .comunidad-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px; align-items: center; }
 .comunidad-img img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 24px; }
-.comunidad-text { color: #F7F4EE; }
-.comunidad-text p { font-size: 17px; line-height: 1.65; color: #9fb2cc; margin-top: 20px; }
+.comunidad-text { color: #16365C; }
+.comunidad-text p { font-size: 17px; line-height: 1.65; color: #41506a; margin-top: 20px; }
 
 /* ── ABOUT ── */
 .about-section { padding: 90px 0; }
@@ -191,13 +191,13 @@ nav {
 .about-stat .stat-label { font-weight: 600; font-size: 15px; color: #5a6678; margin-top: 6px; display: block; }
 
 /* ── FOUNDER ── */
-.founder-section { padding: 80px 0; background: #16365C; }
+.founder-section { padding: 80px 0; background: #F7F4EE; }
 .founder-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 60px; align-items: center; }
 .founder-img-wrap img { width: 100%; max-width: 420px; aspect-ratio: 4/5; object-fit: cover; border-radius: 24px; }
-.founder-text { color: #F7F4EE; }
+.founder-text { color: #16365C; }
 .founder-text .section-eyebrow { color: #E8651E; }
-.founder-quote { font-style: italic; font-size: clamp(18px, 2.5vw, 22px); line-height: 1.55; color: #dfe6f0; border-left: 4px solid #E8651E; padding-left: 20px; margin-top: 24px; }
-.founder-bio { font-size: 16px; line-height: 1.65; color: #9fb2cc; margin-top: 20px; }
+.founder-quote { font-style: italic; font-size: clamp(18px, 2.5vw, 22px); line-height: 1.55; color: #16365C; border-left: 4px solid #E8651E; padding-left: 20px; margin-top: 24px; }
+.founder-bio { font-size: 16px; line-height: 1.65; color: #41506a; margin-top: 20px; }
 
 /* ── CTA ── */
 .cta-section { background: #E8651E; padding: 100px 0; text-align: center; }
@@ -238,21 +238,21 @@ footer { background: #0c1a2c; color: #9fb2cc; padding: 50px 0; }
 .store-intro-body { font-size: 18px; line-height: 1.65; color: #41506a; max-width: 620px; margin: 22px auto 0; }
 
 .store-category-section { padding: 80px 0; background: #F7F4EE; }
-.store-category-section--dark { background: #16365C; }
+.store-category-section--dark { background: #ECE6DC; }
 
 .store-category-header { display: grid; grid-template-columns: auto 1fr; gap: 48px; align-items: start; margin-bottom: 48px; }
 .store-category-header--light .section-eyebrow { color: #E8651E; }
 .store-category-label { display: flex; align-items: flex-start; gap: 24px; }
 .category-num { font-family: 'Bebas Neue', sans-serif; font-size: 100px; line-height: .8; color: rgba(22,54,92,.1); }
-.category-num--light { color: rgba(247,244,238,.15); }
+.category-num--light { color: rgba(22,54,92,.08); }
 .store-category-desc { font-size: 17px; line-height: 1.65; color: #41506a; max-width: 480px; align-self: center; }
-.store-category-desc--light { color: #9fb2cc; }
+.store-category-desc--light { color: #41506a; }
 
 .store-products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
 .store-product-card { background: #fff; border: 2px solid rgba(22,54,92,.07); border-radius: 20px; padding: 28px 24px; transition: transform .25s, box-shadow .25s; }
 .store-product-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(22,54,92,.1); }
-.store-product-card--dark { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.1); color: #F7F4EE; }
-.store-product-card--dark:hover { box-shadow: 0 12px 32px rgba(0,0,0,.2); }
+.store-product-card--dark { background: #fff; border-color: rgba(22,54,92,.07); color: #16365C; }
+.store-product-card--dark:hover { box-shadow: 0 12px 32px rgba(22,54,92,.1); }
 .store-product-card--cta { background: #E8651E; border-color: #E8651E; }
 .store-product-card--cta h4, .store-product-card--cta p { color: #16365C; }
 .store-product-card--cta-dark { background: rgba(232,101,30,.15); border-color: #E8651E; }
