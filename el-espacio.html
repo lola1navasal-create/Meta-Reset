@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Espacio — Meta Reset | Centro de Recuperación</title>
+  <meta name="description" content="El espacio de Meta Reset está diseñado para que pares de verdad. Conocé las instalaciones en Olivos, Buenos Aires.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- BANNER -->
+  <div class="banner">
+    Reservas por WhatsApp&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://wa.me/5491125989033" target="_blank" rel="noopener">+54 9 11 2598-9033</a>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo-real.png" alt="Meta Reset logo">
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="el-espacio.html" class="active">El Espacio</a>
+      <a href="precios.html">Precios</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="https://wa.me/5491125989033" target="_blank" rel="noopener" class="nav-cta">Reservá tu sesión</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <p class="section-eyebrow">Las instalaciones</p>
+    <h1>EL <span>ESPACIO</span></h1>
+    <p>Diseñado para que pares de verdad.</p>
+  </div>
+
+  <!-- GALLERY -->
+  <section class="gallery-section">
+    <div class="inner">
+      <div class="text-center" style="margin-bottom:50px;">
+        <p class="section-eyebrow">El espacio</p>
+        <h2 class="section-h2">DISEÑADO PARA<br><span>QUE PARES</span><br>DE VERDAD.</h2>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item gallery-main">
+          <img src="assets/espacio-1.jpg" alt="Tina de crioterapia en Meta Reset Olivos" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/espacio-2.jpg" alt="Sauna tradicional en Meta Reset" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/espacio-3.jpg" alt="Sauna BOSS en Meta Reset Olivos" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/espacio-4.jpg" alt="Botas de compresión neumática en Meta Reset" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMUNIDAD -->
+  <section class="comunidad-section">
+    <div class="inner comunidad-grid">
+      <div class="comunidad-img">
+        <img src="assets/comunidad.jpg" alt="Comunidad Meta Reset — personas que eligen recuperarse" loading="lazy">
+      </div>
+      <div class="comunidad-text">
+        <p class="section-eyebrow">La comunidad</p>
+        <h2 class="section-h2">MÁS QUE UN<br><span>ESPACIO.</span></h2>
+        <p>Meta Reset es una comunidad de personas que entienden que recuperarse es parte del rendimiento. Cada sesión es una oportunidad de conectar con otros que comparten la misma mentalidad.</p>
+        <p style="margin-top:20px;">Gracias a todos los que ya son parte de esto. Esto es de todos.</p>
+        <a href="https://wa.me/5491125989033" target="_blank" rel="noopener" class="btn-outline-dark" style="margin-top:32px;">Sumate a la comunidad</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="inner text-center">
+      <p class="section-eyebrow">¿Querés conocerlo?</p>
+      <h2 class="section-h2">VENÍ A<br><span>VIVIRLO.</span></h2>
+      <p class="cta-body">Reservá tu primera sesión y sentí la diferencia.</p>
+      <a href="https://wa.me/5491125989033" target="_blank" rel="noopener" class="btn-dark-big" style="margin-top:36px;">Reservá tu sesión</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="inner footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logo-real.png" alt="Meta Reset logo" loading="lazy">
+        <p>Centro de Recuperación<br>Olivos, Buenos Aires</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="el-espacio.html">El Espacio</a>
+        <a href="precios.html">Precios</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+      <div class="footer-contact">
+        <a href="https://wa.me/5491125989033" target="_blank" rel="noopener">+54 9 11 2598-9033</a>
+        <a href="https://instagram.com/meta.reset" target="_blank" rel="noopener">@meta.reset</a>
+        <span>Av. del Libertador 2451, Olivos</span>
+      </div>
+    </div>
+    <div class="footer-copy">© 2025 Meta Reset. Todos los derechos reservados.</div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('open');
+      links.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
