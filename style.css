@@ -155,17 +155,17 @@ nav {
 .pricing-section { padding: 90px 0; background: #ECE6DC; }
 .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; align-items: stretch; }
 .pricing-card { border-radius: 24px; padding: 38px 32px; display: flex; flex-direction: column; background: #F7F4EE; border: 2px solid rgba(22,54,92,.1); position: relative; }
-.pricing-card.featured { background: #16365C; border-color: #16365C; transform: scale(1.03); box-shadow: 0 30px 60px rgba(22,54,92,.25); }
-.pricing-badge-featured { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: #E8651E; color: #16365C; font-weight: 800; font-size: 13px; letter-spacing: .1em; padding: 7px 20px; border-radius: 999px; text-transform: uppercase; white-space: nowrap; }
+.pricing-card.featured { background: #E8651E; border-color: #E8651E; transform: scale(1.03); box-shadow: 0 30px 60px rgba(232,101,30,.3); }
+.pricing-badge-featured { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: #16365C; color: #F7F4EE; font-weight: 800; font-size: 13px; letter-spacing: .1em; padding: 7px 20px; border-radius: 999px; text-transform: uppercase; white-space: nowrap; }
 .pricing-card-top { margin-bottom: 20px; }
 .pricing-label { font-weight: 800; font-size: 14px; letter-spacing: .16em; text-transform: uppercase; color: #8d8470; }
-.pricing-card.featured .pricing-label { color: #E8651E; }
+.pricing-card.featured .pricing-label { color: #7a3411; }
 .pricing-price { font-family: 'Bebas Neue', sans-serif; font-size: 72px; line-height: .85; margin-top: 12px; color: #16365C; }
-.pricing-card.featured .pricing-price { color: #F7F4EE; }
+.pricing-card.featured .pricing-price { color: #16365C; }
 .pricing-per { font-weight: 600; font-size: 15px; color: #8d8470; margin-top: 4px; }
-.pricing-card.featured .pricing-per { color: #9fb2cc; }
+.pricing-card.featured .pricing-per { color: #7a3411; }
 .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 15px; font-weight: 500; color: #41506a; flex: 1; margin-bottom: 24px; }
-.pricing-card.featured .pricing-features { color: #dfe6f0; }
+.pricing-card.featured .pricing-features { color: #16365C; }
 .pricing-note { text-align: center; font-size: 14px; color: #8d8470; margin-top: 28px; font-weight: 500; }
 
 /* ── GALERÍA ── */
